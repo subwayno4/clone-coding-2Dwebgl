@@ -22,7 +22,7 @@ export class Visual{
         if (this.container){
             stage.removeChild(this.container);
         }
-
+           //글자 //
         this.pos = this.text.setText('T', 2, stageWidth, stageHeight);
 
         this.container = new PIXI.particleContainer(
