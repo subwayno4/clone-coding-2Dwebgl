@@ -8,16 +8,15 @@ class app {
               families: ['Hind:700']
             },
             fontactive: () => {
-              this.Text = new Text();
-              this.Text.setText(
-                'A',
-                2,
-                document.body.clientWidth,
-                document.body.clientHeight,
-              );
+              
+              window.addEventListener('resize', this.resize.bind(this), false);
+              this.resize();
+
+              requestAnimationFrame(this.animate.bind(this));
             }
           });
         }
+        
         setWebgl(){
           this.renderer = new PIXI.Renderer({
             width: document.body.clientWidth,
@@ -32,6 +31,13 @@ class app {
           document.body.appendChild(this.renderer.view);
 
           this.stage = new PIXI.Container();
+        }
+
+        resize() {
+          this.stageWidth = documet.body.clientWidth;
+          this.stageHeight = documet.body.clientHeight;
+
+          this.renderer.resize(this.stageWidth, this.stageHeight);
         }
 }
 
