@@ -47,7 +47,7 @@ class app {
           requestAnimationFrame(this.animate.bind(this));
 
           this.Visual.animate();
-          
+
           this.renderer.render(this.stage);
         }
 }
