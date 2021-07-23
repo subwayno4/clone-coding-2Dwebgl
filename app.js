@@ -39,6 +39,12 @@ class app {
 
           this.renderer.resize(this.stageWidth, this.stageHeight);
         }
+
+        animate(t) {
+          requestAnimationFrame(this.animate.bind(this));
+
+          this.renderer.render(this)
+        }
 }
 
 window.onload = () => {
